@@ -55,4 +55,4 @@ if d > 0:
     print ('x1 =',x1,'x2 =',x2)
 if d < 0:
     print ('корней нет')
-###
+###qweqewq3r
