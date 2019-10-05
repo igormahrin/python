@@ -4,13 +4,22 @@
 # Округление должно происходить по математическим правилам (0.6 --> 1, 0.4 --> 0).
 # Для решения задачи не используйте встроенные функции и функции из модуля math.
 
- def my_round(number, ndigits):
+def my_round(number, ndigits):
+    number = number*(10**ndigits)+0.41
+    number = number//1
+    return number/(10**ndigits)
 
 
 
- print(my_round(2.1234567, 5))
- print(my_round(2.1999967, 5))
- print(my_round(2.9999967, 5))
+
+
+
+
+
+
+print(my_round(2.1234567, 5))
+print(my_round(2.1999967, 5))
+print(my_round(2.9999967, 5))
 
 
 # Задание-2:
@@ -19,30 +28,22 @@
 # Билет считается счастливым, если сумма его первых и последних цифр равны.
 # !!!P.S.: функция не должна НИЧЕГО print'ить
 # a = "не корректный билет"
-# b = "удача!"
-# g = 'не удача'
-# def sum_m(x):
-#     while x < 0:
-#         b = 0
-#         c = x %10
-#         b+=c
-#         x//=10
-#         return b
-# def lucky_ticket(ticket_number):
-#     if ticket_number < 99999 or ticket_number > 999999 :
+# gg = "удача!"
+# g = 'нe удача'
 #
-#         return a
-#     else:
-#         ticket_number = str(ticket_number)
-#         str1 = int(ticket_number[0:2])
-#         str2 = int(ticket_number[3:5])
-#     sum_m(str1)
-#     sum_m(str2)
-#     if str1 == str2:
-#         return b
-#     else:
-#         return g
 #
-# print(lucky_ticket(123006))
+# def lucky_ticket(ticket):
+#     ticket_str=str(ticket)
+#     left, right = 0, 0
+#     for i in map(int, ticket_str[:3]):
+#         left += i
+#     for i in map(int, ticket_str[3:]):
+#         right += i
+#     if left == right:
+#         return 'билет счастливый'
+#     else:
+#         return'несчастье'
+#
+# print(lucky_ticket(132006))
 # print(lucky_ticket(12321))
-# print(lucky_ticket(436751))
+# print(lucky_ticket(736751))
