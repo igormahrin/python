@@ -1,3 +1,4 @@
+import os
 # Задание-1:
 # Написать программу, выполняющую операции (сложение и вычитание) с простыми дробями.
 # Дроби вводятся и выводятся в формате:
@@ -31,3 +32,8 @@
 # Подсказка:
 # Чтобы получить список больших букв русского алфавита:
 # print(list(map(chr, range(ord('А'), ord('Я')+1))))
+path = os.path.join('data','fruits.txt')
+f = open(path,'r',encoding='UTF-8')
+pprint(f.readlines())
+for line in f:
+    print(line)
