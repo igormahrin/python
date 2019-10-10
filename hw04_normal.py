@@ -1,5 +1,6 @@
-import  re
+import  re, os,random
 from pprint import pprint
+
 # Задание-1:
 # Вывести символы в нижнем регистре, которые находятся вокруг
 # 1 или более символов в верхнем регистре.
@@ -42,6 +43,7 @@ print(*a)
 # "GAMkgAYEOmHBSQsSUHKvSfbmxULaysmNOGIPHpEMujalpPLNzRWXfwHQqwksrFeipEUlTLec"
 # нужно получить список строк: ['AY', 'NOGI', 'P']
 # Решить задачу двумя способами: с помощью re и без.
+# for c in line_2:
 
 line_2 = 'mtMmEZUOmcqWiryMQhhTxqKdSTKCYEJlEZCsGAMkgAYEOmHBSQsSUHKvSfbmxULaysm'\
        'NOGIPHpEMujalpPLNzRWXfwHQqwksrFeipEUlTLeclMwAoktKlfUBJHPsnawvjPhfgewV'\
@@ -58,10 +60,30 @@ line_2 = 'mtMmEZUOmcqWiryMQhhTxqKdSTKCYEJlEZCsGAMkgAYEOmHBSQsSUHKvSfbmxULaysm'\
        'uXBqHFjvihuNGEEFsfnMXTfptvIOlhKhyYwxLnqOsBdGvnuyEZIheApQGOXWeXoLWiDQN'\
        'JFaXiUWgsKQrDOeZoNlZNRvHnLgCmysUeKnVJXPFIzvdDyleXylnKBfLCjLHntltignbQ'\
        'oiQzTYwZAiRwycdlHfyHNGmkNqSwXUrxGC'
-
+rez = re.findall(r'[a-z]{2}([A-Z]+)[A-Z]{2}',line_2)
+print(rez)
 # Задание-3:
 # Напишите скрипт, заполняющий указанный файл (самостоятельно задайте имя файла)
 # произвольными целыми цифрами, в результате в файле должно быть
 # 2500-значное произвольное число.
 # Найдите и выведите самую длинную последовательность одинаковых цифр
 # в вышезаполненном файле.
+path = os.path.join("file","q.txt")
+f = open(path,"r+",encoding="UTF-8")
+for c in range(0,2500):
+       i = str(random.randint(0,9))
+       f.write(i)
+f.close()
+f = open(path,"r+",encoding="UTF-8")
+c = f.read()
+print(c)
+f.close()
+aaa = []
+regz = "(.)*"
+re.search(regz,c)
+aaa.append(cc)
+print(aaa)
+
+
+
+
